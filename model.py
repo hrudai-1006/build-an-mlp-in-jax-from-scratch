@@ -45,8 +45,10 @@ def assign_class_labels(inputs, num_classes):
     labels = jnp.argmax(inputs[:, :num_classes], axis=1)
     return labels.astype(jnp.int32)
 
-# Step 6 - one_hot_encode_labels (not yet solved)
-# TODO: implement
+# Step 6 - one_hot_encode_labels
+def one_hot_encode_labels(labels, num_classes):
+    # TODO: Convert a 1-D array of integer class indices into a 2-D one-hot matrix of shape (batch, num_classes).
+    return jax.nn.one_hot(labels, num_classes, dtype=jnp.float32)
 
 # Step 7 - init_linear_layer (not yet solved)
 # TODO: implement
